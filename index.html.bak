@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shannon's Handknit Items</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            /* Background image - centered, covers entire screen, fixed on scroll */
+            background: url('images/background.png') center/cover no-repeat fixed;
+            color: #2c2c2c;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            /* Semi-transparent overlay to make text readable while showing background */
+            background: rgba(250, 247, 242, 0.92);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 2px solid rgba(224, 214, 204, 0.6);
+            padding-bottom: 1.5rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            color: #4a3728;
+            font-weight: 500;
+        }
+
+        .header p {
+            color: #7a6858;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image Container */
+        .product-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #f0ebe4;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.02);
+        }
+
+        /* Placeholder for missing images */
+        .no-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: #e8e2d9;
+            color: #a69686;
+            font-size: 0.9rem;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .product-info {
+            padding: 1.25rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #4a3728;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            font-size: 0.85rem;
+            color: #7a6858;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+        }
+
+        /* PayPal Button Container */
+        .paypal-button-container {
+            margin-top: 0.5rem;
+        }
+
+        /* Fake PayPal Button (replace with real one later) */
+.fake-paypal-btn {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/background.png') center/cover no-repeat;
+    color: white;
+    font-weight: 700;
+    border: none;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    display: block;
+}
+
+.fake-paypal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(224, 214, 204, 0.6);
+            font-size: 0.75rem;
+            color: #7a6858;
+        }
+
+        .footer p {
+            margin: 0.25rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+                background: rgba(250, 247, 242, 0.95);
+            }
+            .header h1 {
+                font-size: 1.75rem;
+            }
+            .products-grid {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✨ Mamie's Crocheted Love ✨</h1>
+            <p>Cozy, handmade sweaters crafted with love</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/1.jpg" alt="Classic Crew Neck Sweater">
+                    <div class="no-image" style="display: none;">📸 Sweater Photo<br>Add to /images/</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Classic Crew Neck Sweater</div>
+                    <div class="product-description">Warm merino wool, perfect for chilly evenings. Available in 3 colors.</div>
+                    <div class="product-price">$85.00</div>
+                    <div class="paypal-button-container">
+                        <button class="fake-paypal-btn" onclick="alert('This is a demo button. Replace with real PayPal code!')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/2.jpeg" alt="Turtleneck Cable Knit">
+                    <div class="no-image" style="display: none;">📸 Sweater Photo<br>Add to /images/</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Turtleneck Cable Knit</div>
+                    <div class="product-description">Classic cable pattern with a cozy turtleneck. 100% alpaca wool.</div>
+                    <div class="product-price">$110.00</div>
+                    <div class="paypal-button-container">
+                        <button class="fake-paypal-btn" onclick="alert('This is a demo button. Replace with real PayPal code!')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/3.jpeg" alt="Oversized Cardigan">
+                    <div class="no-image" style="display: none;">📸 Sweater Photo<br>Add to /images/</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Oversized Chunky Cardigan</div>
+                    <div class="product-description">Relaxed fit, perfect for layering. Hand-knit with thick organic cotton.</div>
+                    <div class="product-price">$130.00</div>
+                    <div class="paypal-button-container">
+                        <button class="fake-paypal-btn" onclick="alert('This is a demo button. Replace with real PayPal code!')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/4.jpeg" alt="V-Neck Lightweight Sweater">
+                    <div class="no-image" style="display: none;">📸 Sweater Photo<br>Add to /images/</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">V-Neck Lightweight Sweater</div>
+                    <div class="product-description">Breathable bamboo blend, ideal for spring and summer evenings.</div>
+                    <div class="product-price">$75.00</div>
+                    <div class="paypal-button-container">
+                        <button class="fake-paypal-btn" onclick="alert('This is a demo button. Replace with real PayPal code!')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/5.jpeg" alt="Mini Pets">
+                    <div class="no-image" style="display: none;">📸 Mini Pets<br>Add to /images/</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">Mini Pets</d>
+                    <div class="product-description">Mini pet stuffies.</div>
+                    <div class="product-price">$35.00</div>
+                    <div class="paypal-button-container">
+                        <button class="fake-paypal-btn" onclick="alert('This is a demo button. Replace with real PayPal code!')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <p>© 2026 — Handcrafted with love in the USA</p>
+            <p>All designs are original and made to order. Contact for custom requests.</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple script to handle image loading
+        document.querySelectorAll('.product-image').forEach(container => {
+            const img = container.querySelector('img');
+            const placeholder = container.querySelector('.no-image');
+            
+            // Check if image loaded successfully
+            if (img.complete && img.naturalWidth === 0) {
+                // Image failed to load
+                img.style.display = 'none';
+                if (placeholder) placeholder.style.display = 'flex';
+            } else {
+                img.style.display = 'block';
+                if (placeholder) placeholder.style.display = 'none';
+            }
+            
+            // Also handle dynamic load errors
+            img.onerror = function() {
+                img.style.display = 'none';
+                if (placeholder) placeholder.style.display = 'flex';
+            };
+        });
+    </script>
+</body>
+</html>

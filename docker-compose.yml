@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: shannon-site
+    ports:
+      - "7731:80"
+    volumes:
+      - /mnt/ssd/shannon:/usr/share/nginx/html:ro
+    restart: unless-stopped
